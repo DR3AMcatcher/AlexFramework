@@ -8,10 +8,27 @@ using AlexFramework.Pages;
 using Serilog;
 using Serilog.Events;
 
-namespace AlexFramework
+namespace AlexFramework.Tools
 {
-    class UI_TestSuite
+    [TestFixture]
+    class UI_TestSuite   
+
     {
+
+        [SetUp]
+        public void startTest()
+        {
+            Log.Information("Test set up");
+
+
+        }
+
+        [TearDown]
+        public void endTest()
+        {
+            Log.Information("Test tear down");
+        }
+
         [Test]
         [Order(1)]
         [Author("Alex Pidgirets")]

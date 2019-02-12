@@ -14,24 +14,11 @@ using AlexFramework.Pages;
 
 namespace AlexFramework.Tools
 {
+    [SetUpFixture]
     class BaseTest
     {
         private readonly string folderName = "Logs";
-        [SetUp]
-        public void startTest()
-        {
-            Log.Information("Test set up");
-
-
-        }
-
-        [TearDown]
-        public void endTest()
-        {
-            Log.Information("Test tear down");
-        }
-
-
+        
         [OneTimeSetUp]
         public void beginExecution()
         {
