@@ -57,7 +57,7 @@ namespace AlexFramework.Pages
             selectByValue(drop, car.Location, 60);
             sleepFor(300);
             findElement(price, 30).SendKeys(car.Price.ToString());
-            findElement(add).Click();
+            findElement(add).SendKeys("Enter");
             Log.Information($"Car {car.Carname} profile created");
         }
 
