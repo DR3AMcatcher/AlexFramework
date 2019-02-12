@@ -119,21 +119,17 @@ namespace AlexFramework.Pages
 
 
 
-        /*--------------------------------------------------------------------------*
-         *----------------------------Basic actions---------------------------------*
-         *--------------------------------------------------------------------------*/
-
-        public void open()
+        public void Open()
         {
             Log.Debug($"Open this instance {BASE_URL}{pageURL}");
-            driver().Url = DriverProvider.baseURL + pageURL;
+            driver().Url = BASE_URL + pageURL;
         }
 
 
 
 
 
-        public static void hoverAndClick(By toHover, By toClick, params int[] timeout)
+        public static void HoverAndClick(By toHover, By toClick, params int[] timeout)
         {
             Log.Debug("Hovers the first element and clicks second");
             int timeoutForFindElement = timeout.Length < 1 ? DEFAULT_TIMEOUT : timeout[0];
@@ -145,13 +141,13 @@ namespace AlexFramework.Pages
             }
             catch (Exception)
             {
-                hoverAndClick(toHover, toClick);
+                HoverAndClick(toHover, toClick);
             }
             waitForPageToLoad();
         }
 
 
-        public static void hoverAndClick(By toHover1, By toHover2, By toClick, params int[] timeout)
+        public static void HoverAndClick(By toHover1, By toHover2, By toClick, params int[] timeout)
         {
             Log.Debug("Hovers the and click");
             int timeoutForFindElement = timeout.Length < 1 ? DEFAULT_TIMEOUT : timeout[0];
@@ -164,7 +160,7 @@ namespace AlexFramework.Pages
             }
             catch (Exception)
             {
-                hoverAndClick(toHover1, toHover2, toClick);
+                HoverAndClick(toHover1, toHover2, toClick);
             }
         }
 

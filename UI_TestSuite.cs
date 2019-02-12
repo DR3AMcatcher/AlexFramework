@@ -19,8 +19,8 @@ namespace AlexFramework
         public void ProfileUpdateTest()
         {
             Log.Information("Profile update test starting...");
-            AccountPage account = AccountPage.Instance;
-            account.open();
+            PageAccount account = PageAccount.Instance;
+            account.Open();
             account.updateUser();
             Log.Information("Profile update test finished");
         }
@@ -32,10 +32,10 @@ namespace AlexFramework
         public void AddCarTest()
         {
             Log.Information("Add car test starting...");
-            CarsPage cars = CarsPage.Instance;
-            cars.open();
+            PageCar cars = PageCar.Instance;
+            cars.Open();
             cars.AddCar();
-            AddCarPage addCar = AddCarPage.Instance;
+            PageAddCar addCar = PageAddCar.Instance;
             addCar.CreateCar();
             Log.Information("Add car test finished");
         }
@@ -47,10 +47,10 @@ namespace AlexFramework
         public void DeleteCarTest()
         {
             Log.Information("Delete car test starting...");
-            CarsPage cars = CarsPage.Instance;
-            cars.open();
+            PageCar cars = PageCar.Instance;
+            cars.Open();
             cars.AddCar();
-            AddCarPage addCar = AddCarPage.Instance;
+            PageAddCar addCar = PageAddCar.Instance;
             addCar.CreateCar();
             cars.DeleteCar();
             Log.Information("Delete car test finished");

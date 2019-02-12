@@ -19,8 +19,6 @@ namespace AlexFramework.Tools
         private static IWebDriver webDriver;
         public static string baseURL = ConfigurationManager.AppSettings["base_url"];
         public static string browser = ConfigurationManager.AppSettings["browser"];
-        private static FirefoxDriverService service = FirefoxDriverService.CreateDefaultService(Directory.GetParent(TestContext.CurrentContext.TestDirectory).Parent.FullName + "/drivers"); // location of the geckdriver.exe file
-
 
         public static void Init()
         {
@@ -31,9 +29,6 @@ namespace AlexFramework.Tools
                     break;
                 case "IE":
                     webDriver = new InternetExplorerDriver();
-                    break;
-                case "Firefox":
-                    webDriver = new FirefoxDriver(service);
                     break;
             }
             webDriver.Manage().Window.Maximize();

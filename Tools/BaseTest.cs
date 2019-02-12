@@ -53,9 +53,9 @@ namespace AlexFramework.Tools
 
 
             DriverProvider.Init();
-            BasePage.thread.Value = DriverProvider.getDriver;
-            LoginPage login = LoginPage.Instance;
-            login.open();
+            Base_Page.thread.Value = DriverProvider.getDriver;
+            PageLogin login = PageLogin.Instance;
+            login.Open();
             login.loginUser();
         }
 
